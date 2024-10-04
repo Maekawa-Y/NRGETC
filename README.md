@@ -34,7 +34,7 @@ rm glove.840B.300d.zip
 # Download MIND dataset
 # By downloading the dataset, you agree to the [Microsoft Research License Terms](https://go.microsoft.com/fwlink/?LinkID=206977). For more detail about the dataset, see https://msnews.github.io/.
 # Uncomment the following lines to use the MIND Small dataset (Note MIND Small doesn't have a test set, In our paper we use the validation data from the original dataset as test data in this experiment.
-In addition, the training data in the original dataset are divided into the training data (first 5 days) and the validation data (last 1 day) for this experiment. So you need to do the splitting of the data set after downloading:)
+# In addition, the training data in the original dataset are divided into the training data (first 5 days) and the validation data (last 1 day) for this experiment. So you need to do the splitting of the data set after downloading:)
 wget https://mind201910small.blob.core.windows.net/release/MINDsmall_train.zip https://mind201910small.blob.core.windows.net/release/MINDsmall_dev.zip
 unzip MINDsmall_train.zip -d train
 unzip MINDsmall_dev.zip -d val
