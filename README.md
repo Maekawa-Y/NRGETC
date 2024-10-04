@@ -28,6 +28,7 @@ wget https://mind201910small.blob.core.windows.net/release/MINDsmall_train.zip h
 unzip MINDsmall_train.zip -d train
 unzip MINDsmall_dev.zip -d val
 rm MINDsmall_*.zip
+```
 
 # Description of folder structure.
 ```
