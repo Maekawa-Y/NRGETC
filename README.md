@@ -3,6 +3,32 @@ Code for our paper
 # "A News Recommendation Framework Utilizing ChatGPT: Estimating Target Audience and News Categories"
 ![Proposed News Recommendation Framework Illustration](pf.png)
 
+# Get started
+Basic setup.
+```bash
+git clone https://github.com/Maekawa-Y/NRGETC.git
+cd NRGETC
+pip install -r requirements.txt
+```
+
+Download and preprocess the data.
+```bash
+mkdir data && cd data
+# Download GloVe pre-trained word embedding
+wget https://nlp.stanford.edu/data/glove.840B.300d.zip
+sudo apt install unzip
+unzip glove.840B.300d.zip -d glove
+rm glove.840B.300d.zip
+
+# Download MIND dataset
+# By downloading the dataset, you agree to the [Microsoft Research License Terms](https://go.microsoft.com/fwlink/?LinkID=206977). For more detail about the dataset, see https://msnews.github.io/.
+# Uncomment the following lines to use the MIND Small dataset (Note MIND Small doesn't have a test set, In our paper we use the validation data from the original dataset as test data in this experiment.
+# In addition, the training data in the original dataset are divided into the training data (first 5 days) and the validation data (last 1 day) for this experiment. So you need to do the splitting of the data set after downloading:)
+wget https://mind201910small.blob.core.windows.net/release/MINDsmall_train.zip https://mind201910small.blob.core.windows.net/release/MINDsmall_dev.zip
+unzip MINDsmall_train.zip -d train
+unzip MINDsmall_dev.zip -d val
+rm MINDsmall_*.zip
+
 # Description of folder structure.
 ```
 📦 this-repo-name
@@ -59,22 +85,3 @@ Code for our paper
 (〇〇) represents the folder that needs to be created when using this code. Not in this current repository.
 *** By changing the information of the inputs to the model (e.g. adding targets or categories acquired from the GPT) in the src folder model, various experimental models can be conducted. ***
 ```
-
-# Data Download
-Download and preprocess the data.
-```bash
-mkdir data && cd data
-# Download GloVe pre-trained word embedding
-wget https://nlp.stanford.edu/data/glove.840B.300d.zip
-sudo apt install unzip
-unzip glove.840B.300d.zip -d glove
-rm glove.840B.300d.zip
-
-# Download MIND dataset
-# By downloading the dataset, you agree to the [Microsoft Research License Terms](https://go.microsoft.com/fwlink/?LinkID=206977). For more detail about the dataset, see https://msnews.github.io/.
-# Uncomment the following lines to use the MIND Small dataset (Note MIND Small doesn't have a test set, In our paper we use the validation data from the original dataset as test data in this experiment.
-# In addition, the training data in the original dataset are divided into the training data (first 5 days) and the validation data (last 1 day) for this experiment. So you need to do the splitting of the data set after downloading:)
-wget https://mind201910small.blob.core.windows.net/release/MINDsmall_train.zip https://mind201910small.blob.core.windows.net/release/MINDsmall_dev.zip
-unzip MINDsmall_train.zip -d train
-unzip MINDsmall_dev.zip -d val
-rm MINDsmall_*.zip
