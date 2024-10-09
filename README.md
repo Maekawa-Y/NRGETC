@@ -86,3 +86,6 @@ rm MINDsmall_*.zip
 (〇〇) represents the folder that needs to be created when using this code. Not in this current repository.
 *** By changing the information of the inputs to the model (e.g. adding targets or categories acquired from the GPT) in the src folder model, various experimental models can be conducted. ***
 ```
+
+# Credits
+・Dataset by MIcrosoft News Dataset (MIND), see [https://msnews.github.io/](https://msnews.github.io/).
